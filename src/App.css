@@ -1,38 +1,566 @@
-.App {
-  text-align: center;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    width: 100%;
+    max-width: 600px;
+    height: 260px;
+    border: 1px solid rgb(180, 180, 180);
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container input[type=text],
+.container input[type=password] {
+    width: 90%;
+    height: 40px;
+    position: relative;
+    left: 5%;
+    border: 1px solid rgb(173, 173, 173);
+    border-radius: 3px;
+    margin: 20px 0px;
+    font-size: 18px;
+    padding-left: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.container input[type=text] {
+    margin-bottom: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input:focus {
+    outline: 2px solid rgb(157, 219, 255);
+}
+
+.container p {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 6%;
+}
+
+.container button {
+    border: none;
+    background-color: #0095F6;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    width: 200px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.container a {
+    color: #0095F6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup input[type=text],
+.signup input[type=password] {
+    margin: 10px 0px;
+}
+
+.signup {
+    padding: 10px 0px;
+    height: 360px;
+}
+
+input::placeholder {
+    color: rgb(148, 148, 148);
+    font-size: 16px;
+}
+
+.topright {
+    display: block;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background-color: rgb(93, 0, 199);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%, -60%);
+}
+
+.middle {
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    top: 170px;
+    left: 110px;
+    border-radius: 50%;
+    background-color: rgb(118, 174, 211);
+}
+
+.bottomleft {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: rgb(53, 0, 66);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    transform: translate(-40%, 50%);
+}
+
+.showhide button {
+    border: none;
+    background-color: white;
+    color: rgb(189, 189, 189);
+    position: absolute;
+    border-radius: 0px;
+    padding: 0px;
+    font-weight: 600;
+    width: auto;
+    font-size: 16px;
+    top: 12px;
+    letter-spacing: 0px;
+    left: 82%;
+}
+
+.pass {
+    position: relative;
+    height: 60px;
+}
+
+.signup .pass .showhide button {
+    top: 2px;
+}
+
+.blur {
+    filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.topeff {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #009688;
+    height: 120px;
+    z-index: -10;
+}
+
+.body {
+    width: 90%;
+    height: 80%;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgb(158, 158, 158);
+    margin-left: 5%;
+    margin-top: 4%;
+}
+
+.createChat {
+    display: flex;
+    justify-content: space-around;
+    font-family: sans-serif;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: #F6F6F6;
+    border-bottom: 1px solid rgb(189, 189, 189);
+}
+
+.item {
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+}
+
+.createChat input[type=text] {
+    height: 30px;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid rgb(202, 202, 202);
+}
+
+.createChat input::placeholder {
+    color: rgb(182, 182, 182);
+}
+
+.item button {
+    width: 150px;
+    background-color: #009688;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: white;
+    border: none;
+}
+
+.logout button {
+    position: relative;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    font-size: 16px;
+    width: 100%;
+    color: #009688;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid rgb(238, 238, 238);
+}
+
+.logout {
+    width: 15%;
+}
+
+.messages {
+    height: 600px;
+    display: flex;
+}
+
+.messages .left {
+    width: 30%;
+    border-right: 2px solid rgb(226, 226, 226);
+}
+
+.messages .left h2 {
+    text-align: center;
+    height: 60px;
+    color: bl;
+    letter-spacing: 1px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.messages .right {
+    width: 70%;
+}
+
+.messages .left button {
+    display: flex;
+    justify-content: center;
+    padding: 0px 20px;
+    border: none;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-transform: capitalize;
+    border-top: 1px solid rgb(225, 225, 225);
+}
+
+.messages .right {
+    overflow-y: scroll;
+    position: relative;
+}
+
+.messages .left {
+    overflow-y: scroll;
+}
+
+.messages .left button:nth-last-child(1) {
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.messages .left button:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.right .head {
+    width: 100%;
+    position: sticky;
+    height: 50px;
+    top: 0;
+    background-color: #009688;
+    padding-left: 20px;
+    color: white;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    z-index: 20;
+}
+
+.right .head h2 {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.right .head p {
+    margin-left: auto;
+    margin-right: 20px;
+    background-color: white;
+    color: black;
+    padding-top: 5px;
+    font-size: 16px;
+    width: 80px;
+    text-align: center;
+    font-weight: 600;
+    height: 26px;
+    border-radius: 13px;
+}
+
+.addUser {
+    width: 100%;
+    position: sticky;
+    height: 40px;
+    top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 0px 20px;
+    background-color: #F6F6F6;
+    border-bottom: 1px solid rgb(182, 182, 182);
+    z-index: 20;
+}
+
+.addUser input[type=text] {
+    outline: none;
+    border: none;
+    height: 26px;
+    width: 50%;
+    font-size: 16px;
+    padding-left: 10px;
+    border: 1px solid rgb(228, 228, 228);
+    background-color: white;
+}
+
+.addUser button {
+    border: none;
+    background-color: none;
+    font-size: 14px;
+    height: 26px;
+    padding: 0px 4px;
+    color: white;
+    background-color: teal;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.refresh button {
+    padding: 0px 10px;
+    border-radius: 10px;
+}
+
+.addUser input::placeholder {
+    padding: 0px;
+    font-size: 14px;
+}
+
+.allMessages {
+    background-image: url('./chatbg2.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.message {
+    margin: 5px;
+    width: 76%;
+    position: relative;
+    background-color: white;
+    padding: 8px 10px;
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.sentmess {
+    margin: 5px;
+    width: 76%;
+    position: relative;
+    background-color: rgb(216, 252, 189);
+    left: 23%;
+    padding: 8px 10px;
+    border-radius: 12px;
+}
+
+.allMessages .username {
+    color: rgb(167, 167, 167);
+    font-size: 14px;
+}
+
+.allMessages .messmain {
+    margin-top: 4px;
+}
+
+.sendMessage {
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+.sendMessage input[type=text] {
+    position: relative;
+    height: 40px;
+    outline: none;
+    width: 80%;
+    border: 1px solid rgb(173, 173, 173);
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.sendMessage button {
+    border: none;
+    font-size: 18px;
+    width: 20%;
+    height: 40px;
+    color: black;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+    background-color: rgb(0, 162, 255);
+}
+
+.all {
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #009688;
+    padding: 6px 0px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.all span {
+    background-color: #009688;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.modal {
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll;
+    max-width: 500px;
+    height: 300px;
+    background-color: white;
+    z-index: 11;
+    border: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+}
+
+.modal button {
+    border: none;
+    background-color: #fc2036;
+    position: relative;
+    float: right;
+    color: white;
+    padding: 8px 12px;
+    font-size: 20px;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 500;
+}
+
+.modal h3 {
+    border: 1px solid black;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.modal p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-bottom: 1px solid rgb(168, 168, 168);
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.head p {
+    cursor: pointer;
+}
+
+.intro {
+    width: 100%;
+    height: 100%;
+    background-image: url('./chatting.jpg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+
+.tetx {
+    text-align: center;
+    top: 80%;
+    position: relative;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+.tetx p {
+    margin-top: 6px;
+}
+
+.boticon {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    font-size: 24px;
+    box-shadow: 0px 0px 20px rgb(160, 160, 160);
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    background-color: white;
+    right: 100px;
+    bottom: 140px;
+}
+
+.boticon a {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width:900px) {
+    .body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+    }
+    .messages .left {
+        width: 50%;
+    }
+    .messages {
+        height: 640px;
+    }
+    .messages .right {
+        width: 100%;
+    }
+    .boticon {
+        right: 30px;
+        bottom: 150px;
+    }
 }
