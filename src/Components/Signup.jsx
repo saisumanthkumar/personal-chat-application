@@ -35,7 +35,7 @@ function Signup() {
             userData
           );
           alert("successfully created a account");
-          history.push("/");
+          history.push("/personal-chat-application/");
         } else {
           alert("password and confirm password should be same");
         }

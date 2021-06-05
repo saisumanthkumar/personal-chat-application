@@ -22,7 +22,7 @@ function Login() {
               "token",
               JSON.stringify({ ...res.data, timestamp: new Date().getTime() })
             );
-            history.push(`/user/${res.data.username}`);
+            history.push(`/personal-chat-application/user/${res.data.username}`);
           }
         })
         .catch((err) => alert("Please!Check your username and password"));

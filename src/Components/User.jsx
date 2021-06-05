@@ -20,7 +20,7 @@ function User() {
           setuserData(res.data.msg);
         } else {
           alert(res.data.msg);
-          history.push("/");
+          history.push("/personal-chat-application/");
         }
       });
   }, []);
@@ -38,7 +38,7 @@ function User() {
   };
   const logout = () => {
     localStorage.removeItem("token");
-    history.push("/");
+    history.push("/personal-chat-application/");
   };
 
   return (
