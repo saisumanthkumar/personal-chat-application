@@ -76,7 +76,7 @@ function Login() {
             <div className="showhide"><button onClick={showhide}>{pass?'SHOW':'HIDE'}</button></div>
             </div>
             <p>
-              Don't have an account?<Link to="/Signup"> Sign up</Link>
+              Don't have an account?<Link to="/personal-chat-application/signup"> Sign up</Link>
             </p>
             <button>Login</button>
           </form>

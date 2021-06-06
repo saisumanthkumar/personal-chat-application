@@ -124,7 +124,7 @@ function Signup() {
 
             </div>
             <p>
-              Already have an account ?<Link to="/"> Log In</Link>
+              Already have an account ?<Link to="/personal-chat-application/"> Log In</Link>
             </p>
             <button>Signup</button>
           </form>

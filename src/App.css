@@ -122,7 +122,7 @@ input::placeholder {
 
 .showhide button {
     border: none;
-    background-color: white;
+    background-color: inherit;
     color: rgb(189, 189, 189);
     position: absolute;
     border-radius: 0px;
