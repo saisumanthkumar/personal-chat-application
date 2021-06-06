@@ -235,8 +235,13 @@ input::placeholder {
 }
 
 .messages .left {
+    display: block;
     width: 30%;
     border-right: 2px solid rgb(226, 226, 226);
+}
+
+.messages .leftdup {
+    display: none;
 }
 
 .messages .left h2 {
@@ -250,12 +255,39 @@ input::placeholder {
     justify-content: space-around;
 }
 
+.messages .leftdup h2 {
+    text-align: center;
+    height: 60px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .messages .right {
     width: 70%;
 }
 
 .messages .left button {
     display: flex;
+    justify-content: center;
+    padding: 0px 20px;
+    border: none;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-transform: capitalize;
+    border-top: 1px solid rgb(225, 225, 225);
+}
+
+.messages .leftdup button {
+    display: flex;
+    align-items: center;
     justify-content: center;
     padding: 0px 20px;
     border: none;
@@ -286,18 +318,30 @@ input::placeholder {
     background-color: rgb(235, 235, 235);
 }
 
+.messages .leftdup {
+    overflow-y: scroll;
+}
+
+.messages .leftdup button:nth-last-child(1) {
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.messages .leftdup button:hover {
+    background-color: rgb(235, 235, 235);
+}
+
 .right .head {
     width: 100%;
     position: sticky;
     height: 50px;
     top: 0;
-    background-color: #009688;
+    background-color: white;
     padding-left: 20px;
-    color: white;
     text-transform: capitalize;
     display: flex;
     align-items: center;
     z-index: 20;
+    border: 2px solid black;
 }
 
 .right .head h2 {
@@ -309,8 +353,8 @@ input::placeholder {
 .right .head p {
     margin-left: auto;
     margin-right: 20px;
-    background-color: white;
-    color: black;
+    background-color: #009688;
+    color: white;
     padding-top: 5px;
     font-size: 16px;
     width: 80px;
@@ -486,7 +530,8 @@ input::placeholder {
     font-size: 24px;
     text-align: center;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .modal p {
@@ -516,7 +561,7 @@ input::placeholder {
     top: 80%;
     position: relative;
     letter-spacing: 1px;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .tetx p {
@@ -544,14 +589,20 @@ input::placeholder {
     color: black;
 }
 
+.allChatsButton {
+    display: none;
+}
+
+.closebutton {
+    display: none;
+}
+
 @media (max-width:900px) {
     .body {
         width: 100%;
         height: 100%;
-        margin: 0px;
-    }
-    .messages .left {
-        width: 50%;
+        margin: 50px 0px;
+        margin-bottom: 0px;
     }
     .messages {
         height: 640px;
@@ -561,6 +612,90 @@ input::placeholder {
     }
     .boticon {
         right: 30px;
-        bottom: 150px;
+        bottom: 100px;
+    }
+    .tetx h1 {
+        font-weight: 200;
+        font-size: 24px;
+    }
+    .tetx {
+        font-size: 14px;
+    }
+    .messages .left {
+        display: none;
+    }
+    .messages .leftdup {
+        display: block;
+        width: 0%;
+        transition: 0.4s;
+        position: fixed;
+        z-index: 100;
+        background-color: white;
+        height: 100vh;
+        top: 0px;
+        left: 0px;
+        text-align: center;
+    }
+    .allChatsButton {
+        cursor: pointer;
+        position: fixed;
+        top: 5px;
+        left: 10px;
+        background-color: white;
+        display: block;
+        width: 120px;
+        padding: 5px;
+    }
+    .allChatsButton button {
+        cursor: pointer;
+        border: none;
+        background-color: white;
+        width: 80px;
+        position: absolute;
+        height: 30px;
+        top: 5px;
+        left: 35px;
+        font-size: 16px;
+        border-radius: 15px;
+        text-align: center;
+    }
+    .allChatsButton span {
+        width: 30px;
+        font-size: 30px;
+        background-color: #009688;
+        color: white;
+        height: 30px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .leftdup h2 {
+        background-color: teal;
+        color: white;
+    }
+    .closebutton {
+        display: block;
+    }
+    .messages .leftdup .closebutton button {
+        background-color: #fc2036;
+        color: white;
+        cursor: pointer;
+        width: 20%;
+        padding: 0px;
+        height: 40px;
+        border-radius: 20px;
+        text-align: center;
+        position: relative;
+        margin: 5px;
+        margin-left: auto;
+    }
+    .closebutton p {
+        width: 100%;
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-family: monospace;
+        text-align: center;
     }
 }

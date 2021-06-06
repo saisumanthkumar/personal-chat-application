@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { BsFillCaretDownFill } from "react-icons/bs";
+import { BsFillCaretDownFill, BsArrowLeftShort } from "react-icons/bs";
 import { useHistory } from "react-router-dom";
 function Messages() {
   const [chatid, setchatid] = useState("");
@@ -16,6 +16,7 @@ function Messages() {
   const [modal, setmodal] = useState(false);
   const [chatUsers, setchatUsers] = useState([]);
   const [modal2, setmodal2] = useState(false);
+  const [open, setopen] = useState(false);
 
   const [ref, setref] = useState(1);
   const history = useHistory();
@@ -41,6 +42,7 @@ function Messages() {
       })
       .then((res) => setmessages(res.data));
     setmessloading(false);
+    expand();
   };
   const addUser = () => {
     if (addUserName) {
@@ -97,11 +99,27 @@ function Messages() {
     setloading(false);
   };
 
+  const expand = () => {
+    const element = document.getElementById("leftdup");
+    if (!open) {
+      element.style.width = "100%";
+    } else {
+      element.style.width = "0%";
+    }
+    setopen(!open);
+  };
+
   if (loading === true) {
     return <h1>Loading...</h1>;
   } else {
     return (
       <div className="main">
+        <div className="allChatsButton" onClick={expand}>
+          <span>
+            <BsArrowLeftShort />
+          </span>
+          <button>All Chats</button>
+        </div>
         {modal && (
           <>
             <div className="modal">
@@ -126,7 +144,35 @@ function Messages() {
         )}
         <div className="topeff"></div>
         <div className="messages">
-          <div className="left">
+          <div className="left" id="left">
+            <div className="closebutton">
+              <button onClick={expand}>
+                <p>Close</p>
+              </button>
+            </div>
+            <div className="all" onClick={() => setmodal(!modal)}>
+              <em>ALL GLOBAL USERS</em> <span>{allUsers.length}</span>
+            </div>
+
+            <h2>All Chats</h2>
+
+            {chatData.map((item) => (
+              <button
+                key={item.chatId}
+                id={item.chatId}
+                className={item.chatname}
+                onClick={getMessageData}
+              >
+                <p>{item.chatname}</p>
+              </button>
+            ))}
+          </div>
+          <div className="leftdup" id="leftdup">
+            <div className="closebutton">
+              <button onClick={expand}>
+                <p>Close</p>
+              </button>
+            </div>
             <div className="all" onClick={() => setmodal(!modal)}>
               <em>ALL GLOBAL USERS</em> <span>{allUsers.length}</span>
             </div>
@@ -217,11 +263,13 @@ function Messages() {
               )}
               <div id="last"></div>
             </div>
-            <div className="boticon">
-              {Boolean(chatid) && <a href="#last">
-                <BsFillCaretDownFill />
-              </a>}
-            </div>
+            {Boolean(chatid) && (
+              <div className="boticon">
+                <a href="#last">
+                  <BsFillCaretDownFill />
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

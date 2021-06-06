@@ -1,0 +1,37 @@
+.error {
+    text-align: center;
+    position: fixed;
+    font-family: monospace;
+    border: 1px solid rgb(177, 177, 177);
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    padding-bottom: 30px;
+}
+
+.error h1 {
+    font-family: monospace;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.error h3 {
+    font-family: monospace;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.error p {
+    font-size: 40px;
+    margin: 20px;
+}
+
+.error a {
+    padding: 12px 16px;
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+}
