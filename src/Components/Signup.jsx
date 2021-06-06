@@ -14,6 +14,15 @@ function Signup() {
   const [pass2, setpass2] = useState(true)
 
 
+  const Alert=(msg)=>{
+    const element = document.getElementById('alert')
+    element.innerHTML = msg
+    element.style.display ='block'
+    setTimeout(() => {
+    element.style.display ='none'
+    }, 2500);
+  }
+
   useEffect(() => {
     axios
       .get("https://chitchat951.herokuapp.com/users")
@@ -34,16 +43,16 @@ function Signup() {
             "https://chitchat951.herokuapp.com/addUser",
             userData
           );
-          alert("successfully created a account");
+          Alert("successfully created a account");
           history.push("/personal-chat-application/");
         } else {
-          alert("password and confirm password should be same");
+          Alert("password and confirm password should be same");
         }
       } else {
-        alert("Please!Enter password of length 8 or greater");
+        Alert("Please!Enter password of length 8 or greater");
       }
     } else {
-      alert("User already exists");
+      Alert("User already exists");
     }
   };
   const showhide =(e)=>{
@@ -70,6 +79,8 @@ function Signup() {
   }
   return (
     <div className="over">
+      <div className="alert" id="alert" style={{display:'none'}}></div>
+
       <div className="blur">
         <div className="middle"></div>
         <div className="topright"></div>

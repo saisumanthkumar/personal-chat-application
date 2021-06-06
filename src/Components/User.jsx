@@ -10,6 +10,15 @@ function User() {
 
   const history = useHistory();
 
+  const Alert=(msg)=>{
+    const element = document.getElementById('alert')
+    element.innerHTML = msg
+    element.style.display ='block'
+    setTimeout(() => {
+    element.style.display ='none'
+    }, 2500);
+  }
+
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("token"));
     setloggedData(data);
@@ -19,7 +28,7 @@ function User() {
         if (res.data.type === "success") {
           setuserData(res.data.msg);
         } else {
-          alert(res.data.msg);
+          Alert(res.data.msg);
           history.push("/personal-chat-application/");
         }
       });
@@ -32,7 +41,7 @@ function User() {
         "https://chitchat951.herokuapp.com/createChat",
         PostItem
       );
-      alert(`successfully created chat ${chatName}`);
+      Alert(`successfully created ${chatName} chat`);
       setchatName("");
     }
   };
@@ -43,6 +52,7 @@ function User() {
 
   return (
     <div className="body">
+      <div className="alert" id="alert" style={{display:'none'}}></div>
       
       <div className="createChat">
         <div className="item">

@@ -620,6 +620,7 @@ input::placeholder {
 }
 
 .refreshChat button {
+    border: none;
     background-color: white;
     padding: 5px;
     color: black;

@@ -10,6 +10,15 @@ function Login() {
 
   const [pass, setpass] = useState(true)
 
+  const Alert=(msg)=>{
+    const element = document.getElementById('alert')
+    element.innerHTML = msg
+    element.style.display ='block'
+    setTimeout(() => {
+    element.style.display ='none'
+    }, 2500);
+  }
+
   const handleLogin = (e) => {
     e.preventDefault();
     if (password.length >= 8) {
@@ -25,9 +34,9 @@ function Login() {
             history.push(`/personal-chat-application/user/${res.data.username}`);
           }
         })
-        .catch((err) => alert("Please!Check your username and password"));
+        .catch((err) => Alert("Please!Check your username and password"));
     } else {
-      alert("Please!Enter password of length 8 or greater");
+      Alert("Please!Enter password of length 8 or greater");
     }
   };
 
@@ -45,6 +54,7 @@ function Login() {
 
   return (
     <div className="over">
+      <div className="alert" id="alert" style={{display:'none'}}></div>
       <div className="blur">
         <div className="middle"></div>
         <div className="topright"></div>

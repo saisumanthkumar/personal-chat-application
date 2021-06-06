@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import User from "./Components/User";
 import './App.css'
+import './Components/alert.css'
 import Other from "./Components/Other";
 function App() {
+
   return (
     <div className="main">
       <Router>

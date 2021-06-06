@@ -29,6 +29,15 @@ function Messages() {
       .then((res) => setchatData(res.data.data));
     setloading(false);
   }, [ref]);
+  
+  const Alert=(msg)=>{
+    const element = document.getElementById('alert')
+    element.innerHTML = msg
+    element.style.display ='block'
+    setTimeout(() => {
+    element.style.display ='none'
+    }, 2500);
+  }
   const getMessageData = (e) => {
     const id = e.currentTarget.id;
     setchatid(id);
@@ -51,7 +60,8 @@ function Messages() {
       axios
         .post("https://chitchat951.herokuapp.com/addUserToChat", item)
         .then((res) => {
-          alert(res.data.msg);
+          Alert(res.data.msg);
+          
           console.log(res);
         });
       setaddUserName("");
@@ -111,6 +121,7 @@ function Messages() {
     setloading(false)
   }
 
+
   const expand = () => {
     const element = document.getElementById("leftdup");
     if (!open) {
@@ -126,6 +137,8 @@ function Messages() {
   } else {
     return (
       <div className="main">
+      <div className="alert" id="alert" style={{display:'none'}}></div>
+
         <div className="allChatsButton" onClick={expand}>
           <span>
             <BsArrowLeftShort />
@@ -202,6 +215,9 @@ function Messages() {
               </button>
             ))}
           </div>
+          <div className="refreshChat">
+                    <button onClick={refreshChat}>Refresh Chats</button>
+                  </div>
           <div className="right" id="right">
             {Boolean(!chatid) && (
               <div className="intro">
@@ -240,9 +256,7 @@ function Messages() {
                   <div className="refresh">
                     <button onClick={refresh}>Refresh</button>
                   </div>
-                  <div className="refreshChat">
-                    <button onClick={refreshChat}>Refresh Chats</button>
-                  </div>
+                  
                 </div>
               </>
             )}
