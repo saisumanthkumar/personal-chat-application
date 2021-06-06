@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/personal-chat-application/static/css/main.2540028d.chunk.css",
-    "main.js": "/personal-chat-application/static/js/main.11fc079b.chunk.js",
-    "main.js.map": "/personal-chat-application/static/js/main.11fc079b.chunk.js.map",
+    "main.css": "/personal-chat-application/static/css/main.6e34b446.chunk.css",
+    "main.js": "/personal-chat-application/static/js/main.6d2aebbd.chunk.js",
+    "main.js.map": "/personal-chat-application/static/js/main.6d2aebbd.chunk.js.map",
     "runtime-main.js": "/personal-chat-application/static/js/runtime-main.87cca7a7.js",
     "runtime-main.js.map": "/personal-chat-application/static/js/runtime-main.87cca7a7.js.map",
     "static/js/2.8a3effd4.chunk.js": "/personal-chat-application/static/js/2.8a3effd4.chunk.js",
     "static/js/2.8a3effd4.chunk.js.map": "/personal-chat-application/static/js/2.8a3effd4.chunk.js.map",
     "index.html": "/personal-chat-application/index.html",
-    "static/css/main.2540028d.chunk.css.map": "/personal-chat-application/static/css/main.2540028d.chunk.css.map",
+    "static/css/main.6e34b446.chunk.css.map": "/personal-chat-application/static/css/main.6e34b446.chunk.css.map",
     "static/js/2.8a3effd4.chunk.js.LICENSE.txt": "/personal-chat-application/static/js/2.8a3effd4.chunk.js.LICENSE.txt",
     "static/media/App.css": "/personal-chat-application/static/media/chatbg2.bded4f44.jpg",
     "static/media/chatting.6a5f05a6.jpg": "/personal-chat-application/static/media/chatting.6a5f05a6.jpg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.87cca7a7.js",
     "static/js/2.8a3effd4.chunk.js",
-    "static/css/main.2540028d.chunk.css",
-    "static/js/main.11fc079b.chunk.js"
+    "static/css/main.6e34b446.chunk.css",
+    "static/js/main.6d2aebbd.chunk.js"
   ]
 }
