@@ -88,7 +88,7 @@ function Login() {
             <p>
               Don't have an account?<Link to="/personal-chat-application/signup"> Sign up</Link>
             </p>
-            <button>Login</button>
+            <button type='submit'>Login</button>
           </form>
         </div>
       </div>
