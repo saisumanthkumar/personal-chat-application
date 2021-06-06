@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import img from '../chatting.jpg';
 import { BsFillCaretDownFill, BsArrowLeftShort } from "react-icons/bs";
 import { useHistory } from "react-router-dom";
 function Messages() {
@@ -99,6 +100,17 @@ function Messages() {
     setloading(false);
   };
 
+  const refreshChat=()=>{
+    setloading(true)
+    axios
+      .post("https://chitchat951.herokuapp.com/getUsersChatData", {
+        id: data.id,
+      })
+      .then((res) => setchatData(res.data.data));
+
+    setloading(false)
+  }
+
   const expand = () => {
     const element = document.getElementById("leftdup");
     if (!open) {
@@ -193,9 +205,10 @@ function Messages() {
           <div className="right" id="right">
             {Boolean(!chatid) && (
               <div className="intro">
+                <img src={img} alt="" />
                 <div className="tetx">
                   <h1>
-                    <em> Welcome to CHIT-CHAT</em>
+                    <em> Welcome to <span> CHAT Messenger </span></em>
                   </h1>
                   <p>Share with your friends and start texting...</p>
                 </div>
@@ -226,6 +239,9 @@ function Messages() {
                   </div>
                   <div className="refresh">
                     <button onClick={refresh}>Refresh</button>
+                  </div>
+                  <div className="refreshChat">
+                    <button onClick={refreshChat}>Refresh Chats</button>
                   </div>
                 </div>
               </>
